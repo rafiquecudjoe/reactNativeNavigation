@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Online Shopping">
         <Stack.Screen name="Online Shopping" component={OnlineShopping} />
         <Stack.Screen name="Add To Cart" component={AddToCart} />
         <Stack.Screen name="Payment Successful" component={PaymentSuccessful} />
