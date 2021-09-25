@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import pic from "../assets/success.png";
 
-export default function PaymentSuccessful({navigation}) {
+export default function PaymentSuccessful({ navigation }) {
   return (
     <View style={styles.onshomain}>
       <Text style={styles.heading}>PAYMENT SUCCESSFUL</Text>
@@ -15,9 +15,24 @@ export default function PaymentSuccessful({navigation}) {
       <TouchableOpacity style={styles.btn}>
         <Text style={styles.btntext}>Next</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Text onPress={()=>navigation.navigate("Add To Cart") }style={styles.prev}>Previous</Text>
-      </TouchableOpacity>
+      <View style={styles.footer}>
+        <View>
+          <TouchableOpacity>
+            <Text
+              onPress={() => navigation.navigate("Add To Cart")}
+              style={styles.prev}
+            >
+              Previous
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.swipe}>
+          <Text style={styles.swipeone}></Text>
+          <Text style={styles.swipetwo}></Text>
+          <Text style={styles.swipethree}></Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -57,6 +72,39 @@ const styles = StyleSheet.create({
     color: "grey",
     fontSize: 15,
     alignSelf: "flex-start",
-    marginVertical: 50,
+  },
+
+  swipeone: {
+    height: 15,
+    backgroundColor: "#FF725E",
+    width: 15,
+    borderRadius: 10,
+    opacity: 0.5,
+    marginHorizontal: 1,
+  },
+  swipetwo: {
+    height: 15,
+    backgroundColor: "#FF725E",
+    width: 25,
+    borderRadius: 5,
+    marginHorizontal: 2,
+    opacity: 0.5,
+  },
+  swipethree: {
+    height: 15,
+    backgroundColor: "#FF725E",
+    width: 15,
+    borderRadius: 10,
+  },
+  swipe: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginLeft: 85,
+  },
+  footer: {
+    flexDirection: "row",
+    marginVertical: 30,
+    justifyContent: "flex-start",
   },
 });

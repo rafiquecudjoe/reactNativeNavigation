@@ -18,9 +18,19 @@ export default function OnlineShopping({ navigation }) {
       >
         <Text style={styles.btntext}>Next</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={()=>navigation.navigate("Add To Cart")}>
-        <Text style={styles.skip}>Skip</Text>
-      </TouchableOpacity>
+      <View style={styles.footer}>
+        <View style={styles.swipe}>
+          <Text style={styles.swipeone}></Text>
+          <Text style={styles.swipetwo}></Text>
+          <Text style={styles.swipethree}></Text>
+        </View>
+        <View >
+        <TouchableOpacity style={styles.skip1} onPress={() => navigation.navigate("Add To Cart")}>
+          <Text style={styles.skip}>Skip</Text>
+        </TouchableOpacity>
+        </View>
+       
+      </View>
     </View>
   );
 }
@@ -59,7 +69,46 @@ const styles = StyleSheet.create({
   skip: {
     color: "grey",
     fontSize: 15,
-    alignSelf: "flex-end",
-    marginVertical: 50,
+    marginRight:20
+   
+  
   },
+  swipeone: {
+    height: 15,
+    backgroundColor: "#FF725E",
+    width: 15,
+    borderRadius: 10,
+    
+    marginHorizontal:1
+  },
+  swipetwo: {
+    height: 15,
+    backgroundColor: "#FF725E",
+    width: 25,
+    borderRadius: 5,
+    marginHorizontal: 2,
+    opacity: 0.5,
+    
+  },
+  swipethree: {
+    height: 15,
+    backgroundColor: "#FF725E",
+    width: 15,
+    borderRadius: 10,
+    opacity: 0.5,
+    
+  },
+  swipe: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginHorizontal:90
+    
+  },
+  footer: {
+    flexDirection: "row",
+    marginVertical: 30,
+    justifyContent:"flex-end"
+  },
+
 });
