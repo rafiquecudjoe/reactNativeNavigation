@@ -2,10 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import pic1 from "../assets/addtocart.png";
 
-export default function AddToCart({ navigation }) {
+export default function AddToCart({ route, navigation }) {
+  
+  const { newTitle } = route.params
   return (
     <View style={styles.onshomain}>
-      <Text style={styles.heading}>ADD TO CART</Text>
+      <Text style={styles.heading}>{newTitle}</Text>
       <Text style={styles.htext}>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of

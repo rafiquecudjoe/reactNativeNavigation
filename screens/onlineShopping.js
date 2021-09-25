@@ -13,7 +13,9 @@ export default function OnlineShopping({ navigation }) {
       </Text>
       <Image source={pic} style={styles.image} />
       <TouchableOpacity
-        onPress={() => navigation.navigate("Add To Cart")}
+        onPress={() => navigation.navigate("Add To Cart", {
+          newTitle:'ADD TO CART'
+        })}
         style={styles.btn}
       >
         <Text style={styles.btntext}>Next</Text>
